@@ -1,5 +1,5 @@
 ---
 # tasks file for docker
- - include: install_python3.yml
+- include: install_python3.yml
 - include: install_docker.yml
 - include: start_docker.yml
