@@ -1,0 +1,7 @@
+REPOSITORY                    TAG       IMAGE ID       CREATED          SIZE
+ekarpinskiy/ubuntu-tmp-file   latest    fdfc462f1f3a   44 seconds ago   63.1MB
+nginx                         latest    4f380adfc10f   3 days ago       133MB
+ubuntu                        18.04     7d0d8fa37224   8 days ago       63.1MB
+hello-world                   latest    d1165f221234   3 months ago     13.3kB
+
+Разница container и image в том, что контейнер - это запущенный образ. В контейнере хранится информация об используемом образе, описание сети и описание хоста.
