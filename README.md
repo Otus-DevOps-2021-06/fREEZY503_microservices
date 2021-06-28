@@ -60,3 +60,20 @@ fREEZY503 microservices repository
    docker run -d --network=reddit --network-alias=comment freezy503/comment:2.0
    docker run -d --network=reddit -p 9292:9292 freezy503/ui:3.0
    ~~~
+
+## Docker-4
+В процессе сделано:
+ - Основное задание:
+   - Разобрался с работой сети в Docker 
+      - none
+      - host
+      - bridge
+   - Собрал образы приложений с помощью docker-compose и с помощью него запустил приложение
+   ~~~bash
+   docker-compose up -d
+   ~~~
+
+- Задание с *:
+   - Создал docker-compose.override.yml для reddit проекта, который позволит:
+      - Запускать puma для руби приложений в дебаг режиме с двумя воркерами (флаги --debug и -w 2)
+Базовое имя проекта образуется как имя директории в которой находится файл docker-compose.yml. Имя проекта можо изменить добавлением параметра --project-name NAME при запуске проекта (например, docker-compose --project-name test up -d)
