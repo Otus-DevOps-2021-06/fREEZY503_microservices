@@ -1,0 +1,7 @@
+[reddit]
+reddit-app-0 ansible_host=217.28.231.178
+reddit-app-1 ansible_host=217.28.230.227
+reddit-app-2 ansible_host=217.28.229.147
+reddit-app-3 ansible_host=217.28.230.19
+reddit-app-4 ansible_host=217.28.228.249
+reddit-app-5 ansible_host=217.28.231.51

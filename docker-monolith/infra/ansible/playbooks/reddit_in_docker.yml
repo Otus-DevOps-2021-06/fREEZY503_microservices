@@ -1,0 +1,6 @@
+- name: Create image reddit_in_docker
+  hosts: all
+  become: true
+
+  roles:
+    - reddit_in_docker
