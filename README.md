@@ -76,4 +76,5 @@ fREEZY503 microservices repository
 - Задание с *:
    - Создал docker-compose.override.yml для reddit проекта, который позволит:
       - Запускать puma для руби приложений в дебаг режиме с двумя воркерами (флаги --debug и -w 2)
+
 Базовое имя проекта образуется как имя директории в которой находится файл docker-compose.yml. Имя проекта можо изменить добавлением параметра --project-name NAME при запуске проекта (например, docker-compose --project-name test up -d)
