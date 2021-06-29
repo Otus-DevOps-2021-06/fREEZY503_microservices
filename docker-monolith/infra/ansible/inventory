@@ -1,0 +1,2 @@
+[gitlab_ci]
+gitlab-ci-vm ansible_host=217.28.230.47

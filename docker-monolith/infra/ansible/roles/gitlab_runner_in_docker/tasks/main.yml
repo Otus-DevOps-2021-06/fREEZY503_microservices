@@ -1,0 +1,3 @@
+---
+# tasks file for docker
+- include: start_docker_gitlab_runner.yml

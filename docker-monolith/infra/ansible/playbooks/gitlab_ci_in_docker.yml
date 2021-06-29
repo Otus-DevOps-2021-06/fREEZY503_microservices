@@ -1,0 +1,7 @@
+- name: Gitlab_ci_in_docker
+  hosts: all
+  become: true
+
+  roles:
+#    - gitlab_ci_in_docker
+    - gitlab_runner_in_docker

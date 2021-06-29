@@ -1,0 +1,6 @@
+---
+# tasks file for docker
+- include: install_python3.yml
+- include: install_docker.yml
+- include: create_directories.yml
+- include: start_docker_gitlab_ci.yml
