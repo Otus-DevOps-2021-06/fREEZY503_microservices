@@ -1,0 +1,84 @@
+version: '3.3'
+services:
+  post_db:
+    image: mongo:${MONGO_TAG}
+    volumes:
+      - post_db:/data/db
+    networks:
+      - back_net
+  ui:
+    env_file: .env
+#    build: ./ui
+    image: ${USERNAME}/ui:${UI_TAG}
+    ports:
+      - ${PORT}:${PORT}/tcp
+    networks:
+      - front_net
+  post:
+#    build: ./post-py
+    image: ${USERNAME}/post:${POST_TAG}
+    networks:
+      - front_net
+      - back_net
+  comment:
+#    build: ./comment
+    image: ${USERNAME}/comment:${COMMENT_TAG}
+    networks:
+      - front_net
+      - back_net
+
+  prometheus:
+    image: ${USERNAME}/prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - prometheus_data:/prometheus
+    command: # Передаем доп параметры в командной строке
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention=1d' # Задаем время хранения метрик в 1 день
+    networks:
+      - front_net
+      - back_net
+
+  node-exporter:
+    image: prom/node-exporter:v0.15.2
+    user: root
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points="^/(sys|proc|dev|host|etc)($$|/)"'
+    networks:
+      - front_net
+      - back_net
+  
+  mongodb-exporter:
+    user: root
+    image: bitnami/mongodb-exporter:latest
+    container_name: mongodb-exporter
+    networks:
+      - front_net
+      - back_net
+    command:
+      - '--mongodb.uri=post_db:27017'
+      - '--web.listen-address=:9111'
+      
+  blackbox-exporter:
+    user: root
+    image: prom/blackbox-exporter:latest
+    container_name: blackbox-exporter
+    networks:
+      - front_net
+      - back_net
+
+volumes:
+  post_db:
+  prometheus_data:      
+
+networks:
+  back_net:
+  front_net:
