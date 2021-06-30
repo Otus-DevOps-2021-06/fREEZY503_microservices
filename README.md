@@ -89,4 +89,3 @@ fREEZY503 microservices repository
    - Добавил в Prometheus мониторинг MongoDB с использованием необходимого экспортера (bitnami/mongodb-exporter).
 - Задание со *:   
    - Добавил в Prometheus мониторинг сервисов comment, post, ui с помощью blackbox экспортера.
-   
