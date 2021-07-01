@@ -79,7 +79,7 @@ fREEZY503 microservices repository
 
 Базовое имя проекта образуется как имя директории в которой находится файл docker-compose.yml. Имя проекта можо изменить добавлением параметра --project-name NAME при запуске проекта (например, docker-compose --project-name test up -d)
 
-## Monitoring-4
+## Monitoring-1
 В процессе сделано:
  - Основное задание:
    - Prometheus: запуск, конфигурация, знакомство с Web UI
