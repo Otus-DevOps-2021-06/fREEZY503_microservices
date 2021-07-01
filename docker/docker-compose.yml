@@ -12,20 +12,20 @@ services:
   ui:
     env_file: .env
 #    build: ./ui
-    image: ${USER_NAME}/ui:${UI_TAG}
+    image: ${USERNAME}/ui:${UI_TAG}
     ports:
       - ${PORT}:${PORT}/tcp
     networks:
       - front_net
   post:
 #    build: ./post-py
-    image: ${USER_NAME}/post:${POST_TAG}
+    image: ${USERNAME}/post:${POST_TAG}
     networks:
       - front_net
       - back_net
   comment:
 #    build: ./comment
-    image: ${USER_NAME}/comment:${COMMENT_TAG}
+    image: ${USERNAME}/comment:${COMMENT_TAG}
     networks:
       - front_net
       - back_net
