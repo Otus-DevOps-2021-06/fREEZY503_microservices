@@ -9,3 +9,4 @@ build_info.txt
 .env
 ## python specific
 *.pyc
+bugged-code-master/
