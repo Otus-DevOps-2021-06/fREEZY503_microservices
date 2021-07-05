@@ -1,0 +1,12 @@
+---
+- name: Copy join.txt
+  copy:
+    src: ../files/join.txt
+    dest: ./join.txt
+
+- name: swapoff -a
+  shell: swapoff -a
+
+- name: Init worker
+  shell: bash join.txt
+    

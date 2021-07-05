@@ -1,0 +1,30 @@
+---
+- name: Install packages
+  apt:
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    state: "present"
+    update_cache: true
+    install_recommends: true
+  
+- name: Download the Google Cloud public signing key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add apt repository for stable version
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: Install kubelet, kubeadm, kubectl
+  apt:
+    pkg:
+    - kubelet
+    - kubeadm
+    - kubectl
+    state: "present"
+    update_cache: true
+    install_recommends: true

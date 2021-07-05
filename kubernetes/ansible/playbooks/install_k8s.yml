@@ -1,0 +1,15 @@
+- name: k8s_master
+  hosts: master
+  become: true
+
+  roles:
+    - install_k8s
+    - init_master_k8s
+
+- name: k8s_workers
+  hosts: workers
+  become: true
+
+  roles:
+    - install_k8s
+    - init_worker_k8s
