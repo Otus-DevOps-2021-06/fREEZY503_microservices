@@ -129,4 +129,14 @@ https://hub.docker.com/u/freezy503
    - Ознакомился с описанием основных примитивов приложения и его дальнейшим запуском в Kubernetes
 - Задание со *:
    - Описал установку кластера k8s с помощью terraform и ansible
+
+## Kubernetes-2
+
+В процессе сделано:
+ - Основное задание:
+   - Развернул локальное окружение для работы с Kubernetes
+   - Развернул Kubernetes в Yandex Cloud
+   - Запустил reddit в Kubernetes
+- Задание со *:
+   - Развернул Kubernetes-кластер в Yandex cloud с помощью Terraform модуля
    
