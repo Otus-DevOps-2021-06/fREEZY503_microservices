@@ -1,0 +1,25 @@
+---
+- name: Init cluster
+  shell: kubeadm init --apiserver-advertise-address=0.0.0.0 --pod-network-cidr=10.244.0.0/16 | sed -n -e '/kubeadm join/,$p' > join.txt
+
+- name: Fetch join.txt
+  fetch:
+    src: ./join.txt 
+    dest: ../files/join.txt
+    flat: yes
+
+- name: create .kube directory
+  become: yes
+  become_user: ubuntu
+  file:
+    path: $HOME/.kube
+    state: directory
+    mode: 0755
+
+- name: copy admin.conf to user's kube config
+  copy:
+    src: /etc/kubernetes/admin.conf
+    dest: /home/ubuntu/.kube/config
+    remote_src: yes
+    owner: ubuntu
+    
