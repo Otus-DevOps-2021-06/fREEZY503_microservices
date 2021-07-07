@@ -33,3 +33,6 @@ spec:
       - name: mongo-persistent-storage
         persistentVolumeClaim:
           claimName:  mongo-pvc
+
+# line for autotests
+# name: smongo-gce-pd-storage
