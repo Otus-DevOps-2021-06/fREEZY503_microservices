@@ -139,4 +139,16 @@ https://hub.docker.com/u/freezy503
    - Запустил reddit в Kubernetes
 - Задание со *:
    - Развернул Kubernetes-кластер в Yandex cloud с помощью Terraform модуля
+   - Создал YAML-манифесты для описания созданных сущностей для включения dashboard (dashboard/)
+
+## Kubernetes-3
+
+В процессе сделано:
+ - Основное задание:
+   - Выполнил задание с Ingress и Ingress Controller
+   - Выполнил задание с Secret и TLS
+   - Добавил LoadBalancer Service
+   - Добавил PersistentVolumes и PersistentVolumesClaims
+- Задание со *:
+   - Описал создаваемый объект Secret в виде Kubernetes-манифеста (secret.yml)
    
