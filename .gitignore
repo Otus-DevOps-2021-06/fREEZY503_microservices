@@ -11,3 +11,4 @@ build_info.txt
 *.pyc
 bugged-code-master/
 minikube-linux-amd64
+tls.*
