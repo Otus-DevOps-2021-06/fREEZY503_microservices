@@ -35,4 +35,4 @@ spec:
           claimName:  mongo-pvc
 
 # line for autotests
-# name: mongo-gce-pd-storage
+# name: smongo-gce-pd-storage
