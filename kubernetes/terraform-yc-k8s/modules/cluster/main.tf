@@ -2,7 +2,7 @@ resource "yandex_kubernetes_cluster" "cluster" {
   name        = "test-cluster"
   network_id  = var.network_id
   ### Включить сетевые политики
-  network_policy_provider = "CALICO"
+  #network_policy_provider = "CALICO"
 
   master {
     version = "1.19"

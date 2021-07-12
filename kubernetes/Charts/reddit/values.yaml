@@ -1,0 +1,23 @@
+comment:
+  image:
+    repository: freezy503/comment
+    tag: latest
+  service:
+    externalPort: 9292
+
+post:
+  image:
+    repository: freezy503/post
+    tag: latest
+  service:
+    externalPort: 5000
+
+ui:
+  image:
+    repository: freezy503/ui
+    tag: latest
+  service:
+    externalPort: 9292
+
+mongodb:
+  usePassword: false
