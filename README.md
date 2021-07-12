@@ -151,4 +151,14 @@ https://hub.docker.com/u/freezy503
    - Добавил PersistentVolumes и PersistentVolumesClaims
 - Задание со *:
    - Описал создаваемый объект Secret в виде Kubernetes-манифеста (secret.yml)
+
+## Kubernetes-4
+
+В процессе сделано:
+ - Основное задание:
+   - Работа с Helm
+   - Развертывание Gitlab в Kubernetes
+   - Запуск CI/CD конвейера в Kubernetes
+- Задание со *:
+   - Связал пайплайны сборки образов и пайплайн деплоя на staging и production так, чтобы после релиза образа из ветки мастер запускался деплой уже новой версии приложения на production
    

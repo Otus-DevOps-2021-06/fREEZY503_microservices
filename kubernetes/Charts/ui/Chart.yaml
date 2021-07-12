@@ -1,0 +1,6 @@
+name: ui
+version: 1.0.0
+description: OTUS reddit application UI
+maintainers:
+  - name: Egor Karpinskiy
+    email: ekarpinskiy@express42.com

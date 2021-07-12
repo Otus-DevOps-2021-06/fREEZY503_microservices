@@ -9,6 +9,8 @@ build_info.txt
 .env
 ## python specific
 *.pyc
-bugged-code-master/
+bugged-code-master
 minikube-linux-amd64
 tls.*
+Charts copy
+kubernetes/gitlab-ci

@@ -1,0 +1,6 @@
+name: comment
+version: 1.0.0
+description: OTUS reddit application comment
+maintainers:
+  - name: Egor Karpinskiy
+    email: ekarpinskiy@express42.com
