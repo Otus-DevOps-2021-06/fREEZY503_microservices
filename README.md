@@ -161,4 +161,44 @@ https://hub.docker.com/u/freezy503
    - Запуск CI/CD конвейера в Kubernetes
 - Задание со *:
    - Связал пайплайны сборки образов и пайплайн деплоя на staging и production так, чтобы после релиза образа из ветки мастер запускался деплой уже новой версии приложения на production
+
+## Kubernetes-5
+
+В процессе сделано:
+ - Основное задание:
+   - Развертывание Prometheus в k8s
+   - Настройка Prometheus и Grafana для сбора метрик
+   - Настройка EFK для сбора логов
+- Задание со *:
+   - Запустил alertmanager в k8s и настроил правила для контроля за доступностью api-сервера и хостов k8s
+   ```yaml
+   serverFiles:
+  alerting_rules.yml: 
+    groups:
+      - name: alert_rules
+        rules:
+          - alert: InstanceDown
+            expr: up == 0
+            for: 10s
+            labels:
+              severity: page
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 10 seconds'
+              summary: 'Instance {{ $labels.instance }} down'
+        
+          - alert: k8s API server is down
+            expr: up{job="kubernetes-apiservers"} == 0
+            for: 10s
+            labels:
+              severity: page
+            annotations:
+              description: 'k8s API server is offline for more than 10 seconds'
+              summary: 'k8s API server'
+   ```
+- Задание со *:
+   - Создал Helm-чарт (efk) для установки стека EFK и поместил в директорию ```kubernetes/Charts/```
+   - Команда для установки чарта 
+   ```bash
+   helm upgrade --install efk kubernetes/Charts/efk --set "ingress.enabled=true" --set "ingress.hosts={reddit-kibana}"
+   ```
    
